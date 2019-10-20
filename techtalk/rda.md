@@ -8,17 +8,17 @@
 2. JVM은 Heap에서 자바 프로그램을 실행할 때 자바 클래스 인스턴스와 Array에 대한 메모리를 관리한다.
    - Heap과 Method Area는 각각의 쓰레드가 메모리를 공유한다. Method Area는 변하지 않는 Constant 값들이 존재하기 때문에 각 쓰레드들이 메모리를 공유하더라도 문제가 없다.
 
-![Stack Heap](/woowahan-interview/assets/img/jvm/stack-heap.png)
+![Stack Heap](/assets/img/jvm/stack-heap.png)
 
 ## JVM의 동작 과정
 
 Java Virtual Machine의 구조는 아래 그림처럼 되어있다.
 
-![JVM](/woowahan-interview/assets/img/jvm/jvm.png)
+![JVM](/assets/img/jvm/jvm.png)
 
 JVM은 Java 컴파일러가 컴파일 한 Byte Code를 Class Loader를 이용해 Method Area에 실행 가능한 상태로 적재한다.
 
-![Method Area](/woowahan-interview/assets/img/jvm/method-area.png)
+![Method Area](/assets/img/jvm/method-area.png)
 
 Execution Engine은 Method Area에 Load 되어 있는 Byte Code 정보를 이용해서 Java 프로그램을 실행한다. (Execution Engine은 byte code를 line by line 실행한다)
 
@@ -47,7 +47,7 @@ Method Area의 Byte Code를 이용해 프로그램을 실행할 때 JVM Stack, N
 
 ### JVM Stack
 
-![JVM Stack](/woowahan-interview/assets/img/jvm/jvm-stack.png)
+![JVM Stack](/assets/img/jvm/jvm-stack.png)
 
 각각 쓰레드가 시작될 때 생성된다. Stack Frame을 저장하는 스택이다. 메서드가 수행 될 때마다 하나의 스택 프레임이 생성되어 해당 쓰레드의 JVM stack에 추가 되고 메서드가 종료되면 스택 프레임이 제거 된다. Stack Frame은 Local Variable Array, Operand Stack, Constant Pool의 레퍼런스를 갖는다.
 
@@ -71,25 +71,25 @@ JVM Stack을 살펴보기 위해 위와 같은 코드를 작성한다면, JVM �
 
 맨 처음 main() 호출 시 아래와 같은 그림이 된다.
 
-![JVM Stack 1](/woowahan-interview/assets/img/jvm/jvm-stack1.png)
+![JVM Stack 1](/assets/img/jvm/jvm-stack1.png)
 
-![JVM Stack 1 debug](/woowahan-interview/assets/img/jvm/1.png)
+![JVM Stack 1 debug](/assets/img/jvm/1.png)
 
 그 다음 Adder의 생성자 호출 시 다음과 같이 바뀐다.
 
-![JVM Stack 2](/woowahan-interview/assets/img/jvm/jvm-stack2.png)
+![JVM Stack 2](/assets/img/jvm/jvm-stack2.png)
 
-![JVM Stack 2 debug](/woowahan-interview/assets/img/jvm/2.png)
+![JVM Stack 2 debug](/assets/img/jvm/2.png)
 
 그 이후 Adder 생성자가 끝나면서 다시 Adder 생성자의 Stack Frame은 사라지고 아래 그림과 같이 변하게 된다.
 
-![JVM Stack 1](/woowahan-interview/assets/img/jvm/jvm-stack1.png)
+![JVM Stack 1](/assets/img/jvm/jvm-stack1.png)
 
 그리고 다음 adder.add(1, 2) 메서드 호출 시 다음과 같이 stack frame이 바뀐다.
 
-![JVM Stack 3](/woowahan-interview/assets/img/jvm/jvm-stack3.png)
+![JVM Stack 3](/assets/img/jvm/jvm-stack3.png)
 
-![JVM Stack 3 debug](/woowahan-interview/assets/img/jvm/3.png)
+![JVM Stack 3 debug](/assets/img/jvm/3.png)
 
 ### Local Variable Array
 
@@ -109,7 +109,7 @@ iadd        # Pops those off the stack, adds them, and pushes the result
 
 이 상황에서 operand stack의 상태는 아래 처럼 바뀌게 되는 것이다.
 
-![Operand stack](/woowahan-interview/assets/img/jvm/operand-stack.png)
+![Operand stack](/assets/img/jvm/operand-stack.png)
 
 ### Native Method Stack
 
@@ -119,6 +119,6 @@ iadd        # Pops those off the stack, adds them, and pushes the result
 
 JVM은 Heap에서 자바 프로그램을 실행할 때 자바 클래스 인스턴스와 Array에 대한 메모리를 관리한다.
 
-![Stack Heap](/woowahan-interview/assets/img/jvm/stack-heap.png)
+![Stack Heap](/assets/img/jvm/stack-heap.png)
 
 Heap과 Method Area는 각각의 쓰레드가 메모리를 공유한다. Method Area는 변하지 않는 Constant 값들이 존재하기 때문에 각 쓰레드들이 메모리를 공유하더라도 문제가 없다.
