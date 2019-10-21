@@ -24,7 +24,7 @@
 
 - Spring Boot에서는 이를 보다 직관적으로 편리하게 관리할 수 있다.
     - application.properties
-
+        ```
         # h2 db console에 접근 설정
         spring.h2.console.enabled=true
         spring.h2.console.path=/h2-console
@@ -39,9 +39,9 @@
         spring.jpa.properties.hibernate.format_sql=true
         
         logging.level.techcourse.myblog=DEBUG
-
+        ```
     - application.yml
-
+        ```
         spring:
           profiles:
             active: local # 기본 환경 선택
@@ -59,7 +59,7 @@
           - mapper/**.xml
           configuration:
             map-underscore-to-camel-case: true
-
+        ```
     그리고 요즘에는 YAML로 설정 파일을 관리하는 것이 더 선호된다.
     application.yml을 보더라도 계층 구조로 보다 직관적이면서 중복도 제거할 수 있어 편리하기 때문이다.
 
