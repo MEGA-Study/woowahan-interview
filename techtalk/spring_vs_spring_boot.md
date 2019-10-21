@@ -2,13 +2,13 @@
 
 1. 의존 추가를 쉽게 해준다.
     - Spring에서 의존성 추가할 때 (Maven)
-
+     ```
         <dependency>
         	<groupId>org.thymeleaf</groupId>
         	<artifactId>thymepleaf-spring4</artifactId>
         	<version>2.1.4.RELEASE</version>
         </dependency>
-
+      ```
     - 모든 dependency를 버전까지 정확하게 추가해줘야한다.
 
     - Spring Boot에서는
